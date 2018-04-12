@@ -38,5 +38,6 @@ SCRIPT
     node2.vm.hostname = "node2"
     node2.vm.provision "shell", inline: $script
     node2.vm.provision "shell", inline: $script_node2
+    node2.vm.network "forwarded_port", guest: 8080, host: 9999
   end
 end
