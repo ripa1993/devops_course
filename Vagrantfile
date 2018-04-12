@@ -7,6 +7,7 @@ end
 # Script for both
 $script = <<-SCRIPT
 echo I am provisioning....
+echo second time
 date > /etc/vagrant_provisioned_at
 sudo yum -y update
 SCRIPT
@@ -16,7 +17,7 @@ sudo yum -y install ansible
 SCRIPT
 # Script for node2
 $script_node2 = <<-SCRIPT
-sudo yum -y install java
+sudo yum -y install java git
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 sudo yum -y install jenkins
