@@ -1,12 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('checkout'){
+    stage('Checkout'){
       steps{
         sh 'git checkout ${BRANCH_NAME}'
       }
     }
-    stage('release'){
+    stage('Release'){
       environment {
         DOCKER_REPOSITORY = 'ripa1993'
       }
