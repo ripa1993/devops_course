@@ -11,9 +11,11 @@ pipeline {
         DOCKER_REPOSITORY = 'ripa1993'
       }
       when {
-        branch 'master'
-        not {
-            changeRequest author: 'Jenkins'
+        allOf{
+            branch 'master'
+            not {
+                changeRequest author: 'Jenkins'
+            }
         }
       }
       steps {
