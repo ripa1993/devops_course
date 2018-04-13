@@ -17,7 +17,7 @@ pipeline {
         withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
             sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
         }
-        sshagent (credentials: ['85830b21-fd2c-4be1-ad5c-2dbf717e6701']){
+        sshagent (credentials: ['id_rsa']){
           sh 'sbt "release with-defaults"'
         }
       }
