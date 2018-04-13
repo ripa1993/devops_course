@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage('checkout'){
       steps{
-        checkout scm
         sh 'git checkout ${BRANCH_NAME}'
       }
     }
@@ -15,7 +14,7 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh 'sbt release'
+        sh 'sbt "release with-defaults"'
       }
     }
   }
