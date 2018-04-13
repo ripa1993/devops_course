@@ -12,6 +12,9 @@ pipeline {
       }
       when {
         branch 'master'
+        not {
+            changeRequest author: 'Jenkins'
+        }
       }
       steps {
         withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
